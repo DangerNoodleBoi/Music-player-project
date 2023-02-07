@@ -11,5 +11,5 @@ Date: 2/7/23
 
 # To do list
 
-- [] find music .mp3 files
-- [] find sound effects .mp3 files
+- [x] find music .mp3 files
+- [x] find sound effects .mp3 files
