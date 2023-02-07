@@ -11,6 +11,5 @@ Date: 2/7/23
 
 # To do list
 
-- [] demo the list making took
-- [X] i like this item, it is checked off
-- <del> [x] this is item is so old school. </del>
+- [] find music .mp3 files
+- [] find sound effects .mp3 files
