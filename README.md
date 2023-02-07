@@ -13,3 +13,4 @@ Date: 2/7/23
 
 - [] demo the list making took
 - [X] i like this item, it is checked off
+- <del> [x] this is item is so old school. </del>
