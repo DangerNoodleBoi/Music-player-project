@@ -9,6 +9,7 @@ import ddf.minim.ugens.*;
 //Global Variables
 Minim minim;
 AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
+AudioPlayer soundEffect0, soundEffect1
 //
 void setup() {
   minim = new Minim(this);
@@ -20,6 +21,8 @@ void setup() {
   song5 = minim.loadFile("../music/Night Rider - JIGLR.mp3");
   song6 = minim.loadFile("../music/Runaway - Beau Walker  Royalty Free Music No Copyright Background Music For Videos Free Download.mp3");
   song7 = minim.loadFile("../music/Voss - JAK  Royalty Free Music No Copyright Instrumental Background Music For Videos Free Download.mp3");
+  soundEffect0 = minim.LoadFile("../sound effects/Bruh Sound Effect #2.mp3")
+  soundEffect1 = minim.LoadFile("../sound effects/What - Sound Effect.mp3")
   song0.loop(0); 
 } //End setup
 //
