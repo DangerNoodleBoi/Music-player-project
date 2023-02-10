@@ -22,14 +22,18 @@ void setup() {
   song6 = minim.loadFile("../music/Runaway - Beau Walker  Royalty Free Music No Copyright Background Music For Videos Free Download.mp3");
   song7 = minim.loadFile("../music/Voss - JAK  Royalty Free Music No Copyright Instrumental Background Music For Videos Free Download.mp3");
   soundEffect0 = minim.LoadFile("../sound effects/Bruh Sound Effect #2.mp3")
-  soundEffect1 = minim.LoadFile("../sound effects/What - Sound Effect.mp3")
+  soundEffect = minim.LoadFile("../sound effects/What - Sound Effect.mp3")
   song0.loop(0); 
 } //End setup
 //
 void draw() {} //End draw
 //
-void keyPressed() {} //End keyPressed
+void keyPressed() {
+soundEffect0.play();
+} //End keyPressed
 //
-void mousePressed() {} //End mousePressed
+void mousePressed() {
+soundEffect0.rewind();
+} //End mousePressed
 //
 //End MAIN Program
