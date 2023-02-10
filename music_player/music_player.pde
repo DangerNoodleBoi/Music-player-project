@@ -31,6 +31,7 @@ void draw() {} //End draw
 void keyPressed() { 
   //
   if ( key=='Q' || key=='q' ) exit();
+  if ( key==CODED && key==ESC ) exit();
   //
 soundEffect0.play();
 } //End keyPressed
