@@ -10,6 +10,8 @@ Minim minim;
 AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
 AudioPlayer soundEffect0, soundEffect1;
 //
+int time = 7000;
+//
 Boolean activateWindow=false;
 //
 void setup() {
@@ -34,9 +36,6 @@ void keyPressed() {
 //
  keyPressedShortCuts();
  //
-  if ( key=='Q' || key=='q' ) exit();
-  if ( key==CODED && key==ESC ) exit();
-  //
 } //End keyPressed
 //
 void mousePressed() {
