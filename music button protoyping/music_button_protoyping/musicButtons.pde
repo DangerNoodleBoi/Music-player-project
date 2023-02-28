@@ -3,9 +3,11 @@
 void setup() {
   //Display
   size(700, 500); //width, height
-  fullScreen(); //displayWidth, displayHeight
+  //fullScreen(); //displayWidth, displayHeight
   //
   //Population: visual data
+  buttonReferenceMeasure = width * 1/9;
+  
   //
 } //End setup
 //
@@ -72,6 +74,9 @@ void draw() {
   //ellipse( X, Y, WidthDiameter, HeightDiameter );
   //triangle( X1, Y1, X2, Y2, X3, Y3 );
   //
+  //OPTIONAL shuffle
+  //rect( X, Y, Width, Height );
+  //2-D Shapes
 } //End draw
 //
 void keyPressed() {} //End keyPressed
