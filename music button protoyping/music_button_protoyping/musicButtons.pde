@@ -23,8 +23,8 @@ void setup() {
   print("Confirming Center X:", centerX);
   println("/t Confirming Center Y", centerY);
   //
-  pauseX1 = centerX - buttonReferentMeasure*1/4;
-  pauseY1 = centerY - buttonReferentMeasure*1/4;
+  pauseX1 = centerX - buttonReferentMeasure*1/2;
+  pauseY1 = centerY - buttonReferentMeasure*1/2;
   pauseWidth = buttonReferentMeasure *1/4;
   pauseX2 = centerX + buttonReferentMeasure*1/4;
   pauseY2 = pauseY1;
@@ -66,17 +66,7 @@ void setup() {
 } //End setup
 //
 void draw() {
-  //
-  /*Note: draw the pause button first, in the middle
-   All other buttons are drawn around it
-   All pseudocode starts like rect( X, Y, Width, Height )
-   */
-  //
-  //Confirming Local Variable Center X & Y garbage collected from setup()
-  //print("Confirming Center X:", centerX);
-  //print("/t Confirming Center Y:", centerY);
-  //println("/t Confirming Button Position Couter:", buttonPosition);
-  //
+
   //Button Space
   //rect( spaceX, spaceY, spaceWidth, buttonSide );
   //rect( spaceX, spaceY, spaceHeight, buttonSide );
@@ -86,13 +76,13 @@ void draw() {
   //rect( stopX, stopY, buttonSide, buttonSide ); //Square shape
   //
   //Pause Button
-  rect( pauseX1, pauseY1, buttonSide, buttonSide ); //MIDDLE BUTTON
-  //rect( pauseX1, pauseY1, pauseWidth, buttonSide );
-  //rect( pauseX2, pauseY2, pauseWidth, buttonSide );
+  //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //MIDDLE BUTTON
+  rect( pauseX1, pauseY1, pauseWidth, buttonSide );
+  rect( pauseX2, pauseY2, pauseWidth, buttonSide );
   //
   //Play Button
   //rect( playX, playY, buttonSide, buttonSide ); //not sure where this one is
-  //triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
+ // triangle( playX, playY, playX, playY, playX, playY );
   //
   //MUTE Button
   rect( muteX, muteY, buttonSide, buttonSide ); //Top button
