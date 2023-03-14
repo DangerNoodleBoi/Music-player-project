@@ -8,10 +8,9 @@ float ffX1A, ffY1A, ffX2A, ffY2A, ffX3A, ffY3A;
 float ffX1B, ffY1B, ffX2B, ffY2B, ffX3B, ffY3B;
 float rrX1A, rrY1A, rrX2A, rrY2A, rrX3A, rrY3A;
 float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;
-float rrX, rrY;
-float nextX, nextY, nextX2, nextY2, nextX3, nextY3, nextX1b, nextY1b, nextWidth; 
-float prevX, prevY, prevX2, prevY2, prevY3, prevX3, prevWidth;
-float loop1X, loop1Y;
+float rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
+float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX1b, nextY1b, nextWidth; 
+float prevX1, prevY1, prevX2, prevY2, prevY3, prevX3, prevX1b, prevY1b, prevWidth;
 float loopPlaylistX, loopPlaylistY;
 //
 void setup() {
@@ -82,19 +81,27 @@ void setup() {
   buttonPositionColumn = 4;
   nextX = pauseX1 + (buttonPositionColumn*buttonReferentMeasure);
   nextY = pauseY1;
+  nextX1 = nextX;
+  nextY1 = nextY;
   nextX3 = nextX;
   nextY3 = nextY + buttonReferentMeasure;
   nextX2 = nextX + buttonReferentMeasure*1/2;
   nextY2 = nextY + (ffY3A-ffY1A)*1/2;
- // nextX1b= pauseX1 + (buttonPositionColumn*buttonReferentMeasure);
- // nextY1b= pauseY1; //+ (buttonPositionColumn*buttonReferentMeasure);
+  nextX1b = nextX + buttonReferentMeasure*2/3;
+  nextY1b = nextY;
+  nextWidth = buttonReferentMeasure*1/3;
   //
-  prevX = pauseX1 - ( buttonPositionColumn * buttonReferentMeasure )/1.3;
+  prevX = pauseX1 - ( buttonPositionColumn + buttonReferentMeasure );
   prevY = pauseY1;
-  prevX3 = prevX;
+  prevX1 = rrX2B;
+  prevY1 = prevY;
+  prevX3 = prevX1;
   prevY3 = prevY + buttonReferentMeasure;
-  prevX2 = prevX - buttonReferentMeasure*1/2;
-  prevY2 = prevY + (ffY3A-ffY1A)*1/2;
+  prevX2 = prevX1 - buttonReferentMeasure*1/2;
+  prevY2 = prevY + (prevY3-prevY1)*1/2;
+  prevX1b = prevX2 - buttonReferentMeasure*1/3;
+  prevY1b = prevY;
+  prevWidth = buttonReferentMeasure*1/3;
   //
   buttonPositionColumn = 6;
   loop1X = pauseX1 + (buttonPositionColumn*buttonReferentMeasure);
@@ -145,13 +152,13 @@ void draw() {
   //
   //Next Button, skip file
  // rect( nextX, nextY, buttonSide, buttonSide ); //second to the right
-  triangle( nextX, nextY, nextX2, nextY2, nextX3, nextY3 );
+  triangle( nextX1, nextY1, nextX2, nextY2, nextX3, nextY3 );
   rect( nextX1b, nextY1b, nextWidth, buttonSide );
   //
   //Previous Button
  // rect( prevX, prevY, buttonSide, buttonSide ); //second to the left
-  triangle( prevX, prevY, prevX2, prevY2, prevX3, prevY3 );
-  rect( prevX, prevY, prevWidth, buttonSide );
+  triangle( prevX1, prevY1, prevX2, prevY2, prevX3, prevY3 );
+  rect( prevX1b, prevY1b, prevWidth, buttonSide );
   //
   //Loop the Song Once
   rect( loop1X, loop1Y, buttonSide, buttonSide ); //far right
