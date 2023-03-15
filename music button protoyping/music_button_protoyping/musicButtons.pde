@@ -91,15 +91,16 @@ void setup() {
   nextY1b = nextY;
   nextWidth = buttonReferentMeasure*1/3;
   //
+  
   prevX = pauseX1 - ( buttonPositionColumn + buttonReferentMeasure );
   prevY = pauseY1;
-  prevX1 = rrX2B;
+  prevX1 = rrX2B/1.15;
   prevY1 = prevY;
   prevX3 = prevX1;
   prevY3 = prevY + buttonReferentMeasure;
   prevX2 = prevX1 - buttonReferentMeasure*1/2;
   prevY2 = prevY + (prevY3-prevY1)*1/2;
-  prevX1b = prevX2 - buttonReferentMeasure*1/3;
+  prevX1b = prevX2 - buttonReferentMeasure*1/2;
   prevY1b = prevY;
   prevWidth = buttonReferentMeasure*1/3;
   //
