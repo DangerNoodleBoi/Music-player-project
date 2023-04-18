@@ -7,12 +7,16 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
-AudioPlayer soundEffect0, soundEffect1;
+// Pre-array: AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
+int numberOfSongs = 8;
+AudioPlayer[] songs = new AudioPlayer[numberOfSongs];
+// Pre-array: AudioPlayer soundEffect0, soundEffect1;
+int numberOfSoundEffects = 2;
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
 //
 int time = 7000;
 //
-Boolean activateWindow=false;
+Boolean activateWindow=false, autoPlayON = false;
 //
 void setup() {
   size (350, 400);
@@ -23,8 +27,10 @@ void setup() {
 //
 void draw() {
   if ( activateWindow == true ) background(0);
-   println ( soundEffect0.position(), soundEffect0.length() );
-  println ( "When does the sound stop? Indicates delay");
+   println (autoPlayON, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length());
+//
+if ( autoPlayON==true ) autoPlayMusic();
+//
 } //End draw
 //
 void keyPressed() { 
@@ -39,7 +45,6 @@ void keyPressed() {
 } //End keyPressed
 //
 void mousePressed() {
-  soundEffect0.rewind();
   if ( activateWindow==false ) activateWindow = true; 
 } //End mousePressed
 //
