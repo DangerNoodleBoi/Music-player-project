@@ -1,3 +1,9 @@
+void buttons() {
+  hehe();
+  pog();
+
+
+}
 //Global Variables
 float buttonReferentMeasure;
 float buttonSide, spaceWidth, spaceHeight;
@@ -13,9 +19,9 @@ float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX1b, nextY1b, nextWidt
 float prevX1, prevY1, prevX2, prevY2, prevY3, prevX3, prevX1b, prevY1b, prevWidth;
 float loopPlaylistX, loopPlaylistY;
 //
-void setup() {
+void hehe() {
   //Display
-  size(900, 700); //width, height
+ 
   //fullScreen(); //displayWidth, displayHeight
   //
   //Population: visual data
@@ -118,7 +124,7 @@ void setup() {
   //
 } //End setup
 //
-void draw() {
+void pog() {
 
   //Button Space
   //rect( spaceX, spaceY, spaceWidth, buttonSide );
@@ -182,8 +188,5 @@ void draw() {
 } //End draw
 //
   
-void keyPressed() {} //End keyPressed
-//
-void mousePressed() {} //End mousePressed
-//
+
 //End MAIN Program
