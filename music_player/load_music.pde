@@ -1,4 +1,5 @@
 void loadMusic() {
+  //
  minim = new Minim(this);
  //
  //Concentration of Pathway + File Name
@@ -14,14 +15,15 @@ void loadMusic() {
  String vossFileName = "Voss - JAK  Royalty Free Music No Copyright Instrumental Background Music For Videos Free Download.mp3";
  String bruhFileName = "Bruh Sound Effect #2.mp3";
  String whatFileName = "What - Sound Effect.mp3";
-  song0 = minim.loadFile(musicPathway + alterFileName);
-  song1 = minim.loadFile(musicPathway + colonyFileName);
-  song2 = minim.loadFile(musicPathway + dreamsFileName);
-  song3 = minim.loadFile(musicPathway + candyFileName);
-  song4 = minim.loadFile(musicPathway + holdFileName);
-  song5 = minim.loadFile(musicPathway + nightFileName);
-  song6 = minim.loadFile(musicPathway + runawayFileName);
-  song7 = minim.loadFile(musicPathway + vossFileName);
-  soundEffect0 = minim.loadFile(SoundEffectPathway + bruhFileName);
-  soundEffect1 = minim.loadFile(SoundEffectPathway + whatFileName);
-}//End loadmusic
+  songs[0] = minim.loadFile(musicPathway + alterFileName);
+  songs[1] = minim.loadFile(musicPathway + colonyFileName);
+  songs[2] = minim.loadFile(musicPathway + dreamsFileName);
+  songs[3] = minim.loadFile(musicPathway + candyFileName);
+  songs[4] = minim.loadFile(musicPathway + holdFileName);
+  songs[5] = minim.loadFile(musicPathway + nightFileName);
+  songs[6] = minim.loadFile(musicPathway + runawayFileName);
+  songs[7] = minim.loadFile(musicPathway + vossFileName);
+  soundEffects[0] = minim.loadFile(SoundEffectPathway + bruhFileName);
+  soundEffects[1] = minim.loadFile(SoundEffectPathway + whatFileName);
+}
+//End loadmusic

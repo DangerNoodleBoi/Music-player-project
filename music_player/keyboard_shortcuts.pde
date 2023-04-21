@@ -6,14 +6,14 @@ quitButtons();
 }//End keyPressedShortCuts
 //
 void musicShortCuts() {
-  if ( key=='1') song[0].loop(0);
-  if ( key=='2') song[1].loop(0);
-  if ( key=='3') song[2].loop(0);
-  if ( key=='4') song[3].loop(0);
-  if ( key=='5') song[4].loop(0);
-  if ( key=='6') song[5].loop(0);
-  if ( key=='7') song[6].loop(0);
-  if ( key=='8') song[7].loop(0);  
+  if ( key=='1') songs[0].loop(0);
+  if ( key=='2') songs[1].loop(0);
+  if ( key=='3') songs[2].loop(0);
+  if ( key=='4') songs[3].loop(0);
+  if ( key=='5') songs[4].loop(0);
+  if ( key=='6') songs[5].loop(0);
+  if ( key=='7') songs[6].loop(0);
+  if ( key=='8') songs[7].loop(0);  
 //
 if (key == 'P' || key == 'p') playPause();
 if (key == 'U' || key == 'u') autoPlay();
@@ -24,8 +24,8 @@ if (key == 'R' || key == 'r') fastRewind();
 if (key == 'N' || key == 'n') nextSong();
 if (key == 'B' || key == 'b') previousSong();
 if (key == 'L' || key == 'l') loopSong();
-if (key == 'O' || key == 'o') LoopPlaylist();
-if (key == 'W' || key == 'w') ShufflePlaylist();
+if (key == 'O' || key == 'o') loopPlaylist();
+if (key == 'W' || key == 'w') shufflePlaylist();
 if (key == 'E' || key == 'e') loopAndShuffle();
 }//End musicShortCuts
 //
@@ -38,20 +38,20 @@ void quitButtons() {
   }//End Quit Buttons
 }//End quitButtons
 void quitButtonCode() {
-  soundEffect1.loop(0);
+  soundEffects[1].loop(0);
   delay(1000);
   exit();
 }//End quitButtonCode
 //
 void autoPlay() {
-  if (autoPLayON==false) {
+  if (autoPlayON==false) {
     autoPlayON=true;
-  } else { autoPlayON=false
+  } else { autoPlayON=false;
   songs[currentSong].pause();
   }
 }// End AutoPlay
 //
-void autuPlayMusic() {
+void autoPlayMusic() {
   if (songs[currentSong].isPlaying()==false) {
     currentSong++;
     songs[currentSong].play();
@@ -71,9 +71,9 @@ void playPause() {
 //
 void mute()
 {
- if ( songs[currentSong].isplaying() ) {
+ if ( songs[currentSong].isPlaying() ) {
    songs[currentSong].unmute();
- } else if ( songs[currentSong].isMuted() && songs[currentSong].position() >= songs[currentSOng].length()4*5 ) {
+ } else if ( songs[currentSong].isMuted() && songs[currentSong].position() >= songs[currentSong].length()*4/5 ) {
    songs[currentSong].rewind();
    songs[currentSong].unmute();
  } else { 
@@ -91,18 +91,49 @@ void stopSong()
   }
 }// end Stop Song
 void fastForward() {
-if (song[currentSong].isPlaying() ) songs[currentSong].skip(1000);
+if (songs[currentSong].isPlaying() ) songs[currentSong].skip(1000);
 }// end fastforward
 //
 void fastRewind() {
-  if (songs[currentSong].isPLaying() ) songs[currentSong].skip(-1000);
+  if (songs[currentSong].isPlaying() ) songs[currentSong].skip(-1000);
 }//end rewind
  //
  void nextSong() {
-   if (songs[currentSOng].isPlaying() ) {
-     songs[currentSong].pause();
-     songs[currentSong].rewind();
-     songs[currentSong].nextSong() + [currentSong];
+  if ( songs[currentSong].isPlaying() ) {
+    //Students to finish
+    //Current Song: .pause(), .rewind()
+    //Next Song: currentSong++
+    //Now: DELAY-1-Second, .play()
+  } else if (currentSong >= songs.length-1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+    currentSong++;
+      }
+}
+//End Next Song
+//
+void previousSong() {
+  //ERROR: ArrayListOutOfBounds
+  currentSong--;
+}//End Previous Song
+//
+void loopSong() {
+}//End Loop Song
+//
+void loopPlaylist() {
+}//End Loop the Playlist
+//
+void shufflePlaylist() {
+}//End Shuffle the Playlist()
+//
+void loopAndShuffle() {
+  //Student to finish
+  //Hint: random() and casting, see Global Variables' currentSong declaration
+}//End Loop And Shuffle
+//
+
+//End Key Board Short Cuts Sub Program
      
    
-//End key Board Short Cuts Sub Porgram
+  //End key Board Short Cuts Sub Porgram
