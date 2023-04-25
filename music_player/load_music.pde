@@ -24,7 +24,7 @@ void loadMusic() {
   songs[5] = minim.loadFile(musicPathway + nightFileName);
   songs[6] = minim.loadFile(musicPathway + runawayFileName);
   songs[7] = minim.loadFile(musicPathway + vossFileName);
-  soundEffects[0] = minim.loadFile(SoundEffectPathway + bruhFileName);
-  soundEffects[1] = minim.loadFile(SoundEffectPathway + whatFileName);
+ // soundEffects[0] = minim.loadFile(SoundEffectPathway + bruhFileName);
+ // soundEffects[1] = minim.loadFile(SoundEffectPathway + whatFileName);
 }
 //End loadmusic
