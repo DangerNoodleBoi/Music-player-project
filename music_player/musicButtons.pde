@@ -17,7 +17,9 @@ float rrX1B, rrY1B, rrX2B, rrY2B, rrX3B, rrY3B;
 float rrX, rrY, nextX, nextY, prevX, prevY, loop1X, loop1Y;
 float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextX1b, nextY1b, nextWidth; 
 float prevX1, prevY1, prevX2, prevY2, prevY3, prevX3, prevX1b, prevY1b, prevWidth;
-float loopPlaylistX, loopPlaylistY;
+float loopPlaylistWidthDiameter, loopPlaylistHeightDiameter, loopPlaylistX1, loopPlaylistY1, loopPlaylistX2, loopPlaylistY2, loopPlaylistX3, loopPlaylistY3,  loopPlaylistX, loopPlaylistY;
+float loop1WidthDiameter, loop1HeightDiameter,loopIX1, loopIY1, loopIX2, loopIY2, loopIX3, loopIY3;
+
 //
 void hehe() {
   //Display
@@ -119,8 +121,10 @@ void hehe() {
   //
   buttonPositionRow= 2;
   buttonPositionColumn=6;
-  loopPlaylistX = pauseX1 + (buttonPositionColumn*buttonReferentMeasure);
-  loopPlaylistY = pauseY1 + (buttonPositionRow*buttonReferentMeasure)/1.6;
+  loopPlaylistX = pauseX1 + (buttonPositionColumn*buttonReferentMeasure)*1.09;
+  loopPlaylistY = pauseY1 + (buttonPositionRow*buttonReferentMeasure)/1.1;
+  loopPlaylistWidthDiameter = (buttonPositionRow*buttonReferentMeasure)*0.5;
+  loopPlaylistHeightDiameter = (buttonPositionRow*buttonReferentMeasure)*0.5;
   //
 } //End setup
 //
@@ -174,8 +178,8 @@ void pog() {
   //triangle( loop1X1, loop1Y1, loop1X2, loop1Y2, loop1X3, loop1Y3 );
   //
   //Loop the Playlist (infinitely)
-  rect( loopPlaylistX, loopPlaylistY, buttonSide, buttonSide ); //down&right
-  //ellipse( loopPlaylistX, loopPlaylistY, loopPlaylistWidthDiameter, loopPlaylistHeightDiameter );
+  //rect( loopPlaylistX, loopPlaylistY, buttonSide, buttonSide ); //down&right
+  ellipse( loopPlaylistX, loopPlaylistY, loopPlaylistWidthDiameter, loopPlaylistHeightDiameter );
   //ellipse( loopPlaylistX, loopPlaylistY, loopPlaylistWidthDiameter, loopPlaylistHeightDiameter );
   //triangle( loopPlaylistX1, loopPlaylistY1, loopPlaylistX2, loopPlaylistY2, loopPlaylistX3, loopPlaylistY3 );
   //
