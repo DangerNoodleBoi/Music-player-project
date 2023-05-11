@@ -126,6 +126,11 @@ void hehe() {
   loopPlaylistWidthDiameter = (buttonPositionRow*buttonReferentMeasure)*0.5;
   loopPlaylistHeightDiameter = (buttonPositionRow*buttonReferentMeasure)*0.5;
   //
+  loop1X= pauseX1 + (buttonPositionColumn*buttonReferentMeasure)*1.09;
+  loop1Y= pauseY1 + (buttonPositionRow*buttonReferentMeasure)/1.9;
+  loop1WidthDiameter= (buttonPositionRow*buttonReferentMeasure)*0.5;
+  loop1HeightDiameter = (buttonPositionRow*buttonReferentMeasure)*0.5;
+  //
 } //End setup
 //
 void pog() {
@@ -172,8 +177,8 @@ void pog() {
   rect( prevX1b, prevY1b, prevWidth, buttonSide );
   //
   //Loop the Song Once
-  rect( loop1X, loop1Y, buttonSide, buttonSide ); //far right
-  //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
+  //rect( loop1X, loop1Y, buttonSide, buttonSide ); //far right
+  ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
   //ellipse( loop1X, loop1Y, loop1WidthDiameter, loop1HeightDiameter );
   //triangle( loop1X1, loop1Y1, loop1X2, loop1Y2, loop1X3, loop1Y3 );
   //
